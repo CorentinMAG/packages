@@ -1,0 +1,14 @@
+<button
+  #tooltipRef="NgxTooltip"
+  #elementRef
+  NgxTooltip
+  class="float_item_button"
+  [ngxTooltip]="tooltip ? tooltip : icon"
+  mat-fab 
+  [color]="color"
+  [disabled]="disabled"
+  >
+
+  <mat-icon>{{ icon }}</mat-icon>
+
+</button>
