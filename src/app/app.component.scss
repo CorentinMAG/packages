@@ -1,1 +1,53 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0;
+
+    mat-toolbar-row {
+        padding-left: 0;
+
+        .hamburger {
+            display: block;
+            min-height: 100%;
+            width: 64px;
+            border-radius: 0;
+            margin-right: 10px;
+        }
+    }
+}
+
+mat-sidenav-container {
+    min-height: 100%;
+    margin: 0;
+
+    mat-sidenav {
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        left: 0;
+        min-width: 260px;
+        z-index: -1;
+    
+        @media (max-width: 599px) {
+            top: 56px;
+        }
+    }
+
+    mat-sidenav-content {
+        overflow-x: auto;
+        height: 100%;
+        padding-top: 64px;
+
+        @media (max-width: 599px) {
+            padding-top: 56px;
+        }
+
+        .main_content {
+            height: 100%;
+            padding: 10px 30px;
+        }
+    }
+}

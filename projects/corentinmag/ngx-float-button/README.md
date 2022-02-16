@@ -39,11 +39,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 | @Inputs              | type                                 | default  | description  |
 |----------------------|--------------------------------------|----------|--------------|
-| **direction**        | `'top' | 'left' | 'right' | 'bottom'`| `top`    | position of the child buttons relative to the main button  |
+| **direction**        | `'top' \| 'left' \| 'right' \| 'bottom'`| `top`    | position of the child buttons relative to the main button  |
 | **icon**             | `string`                             | `home`   | should be a material icon string (https://fonts.google.com/icons)  |
 | **tooltip**          | `string`                             | `home`   | not used  |
 | **color**            | `ThemePalette`                       | `primary`| main button color  |
-| **position**         | `'br' | 'bl' | 'tl' | 'tr'`          | `br`     | either the main button is positionned on the bottom-right, bottom-left, top-left or top-right of the viewport  |
+| **position**         | `'br' \| 'bl' \| 'tl' \| 'tr'`          | `br`     | either the main button is positionned on the bottom-right, bottom-left, top-left or top-right of the viewport  |
 | **disabled**         | `boolean`                            | `false`  | either the main button is disabled or not  |
 | **spaceBetween**     | `number`                             | `5`      | the space in pixel between each child button   |
 | **spaceGap**         | `number`                             | `15`     | the space in pixel between the main button and the first child button   |

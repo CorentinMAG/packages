@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="hamburger" (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My Libraries</span>
+
+  </mat-toolbar-row>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedTopGap]>
+        <mat-nav-list>
+            <a mat-list-item>
+              <mat-icon>dashboard</mat-icon> Float Button
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <section class="main_content">
+        <router-outlet></router-outlet>
+      </section>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

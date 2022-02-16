@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { NgxTooltipDirective } from '../../directive/tooltip.directive';
 import { State } from '../../model/model';
 import { StateService } from '../../service/state.service';
@@ -13,7 +14,7 @@ export class NgxFloatItemButtonComponent implements OnInit {
 
   @Input() icon: string = 'home';
   @Input() tooltip?: string;
-  @Input() color: string = 'primary';
+  @Input() color: ThemePalette = 'primary';
   @Input() disabled: boolean = false;
   @Input() tooltipDisabled: boolean = false;
 

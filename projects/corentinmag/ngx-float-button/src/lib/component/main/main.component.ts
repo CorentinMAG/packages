@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ViewContainerRef, AfterViewInit, ContentChildren, QueryList, AfterContentInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ViewContainerRef, AfterViewInit, ContentChildren, QueryList, OnDestroy, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { style, state, transition, animate, trigger, stagger, query } from '@angular/animations';
 import { Subscription } from 'rxjs';
 import { DIRECTION, DISPLAY, POSITION, State } from '../../model/model';
 import { NgxFloatItemButtonComponent } from '../item/item.component';
 import { StateService } from '../../service/state.service';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'ngx-float-button',
@@ -39,12 +40,12 @@ import { StateService } from '../../service/state.service';
   ])
 ]
 })
-export class NgxFloatButtonComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgxFloatButtonComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
 
   @Input() direction: DIRECTION = 'top';
   @Input() icon: string = 'home';
   @Input() tooltip: string = 'home';
-  @Input() color: string = 'primary';
+  @Input() color: ThemePalette = 'primary';
   @Input() position: POSITION = 'br';
   @Input() disabled: boolean = false;
   @Input() spaceBetween: number = 5;
@@ -75,6 +76,27 @@ export class NgxFloatButtonComponent implements OnInit, AfterViewInit, OnDestroy
       position: this.position
     }
     this.stateService.publish(this._initState);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes)
+
+    if (changes['isOpen'] && changes['isOpen'].previousValue != changes['isOpen'].currentValue) {
+      const newState = {...this.stateService.currentState, isOpen: changes['isOpen'].currentValue}
+      this.stateService.publish(newState);
+    }
+
+    if (changes['hoverable'] && changes['hoverable'].previousValue != changes['hoverable'].currentValue) {
+      const newState = {...this.stateService.currentState, isHoverable: changes['hoverable'].currentValue}
+      this.stateService.publish(newState);
+    }
+
+    if (changes['direction'] && changes['direction'].previousValue != changes['direction'].currentValue) {
+      this._setDirection();
+    }
+    if (changes['position'] && changes['position'].previousValue != changes['position'].currentValue) {
+      this._setPosition();
+    }
   }
 
   toggle(): void {
@@ -133,6 +155,11 @@ export class NgxFloatButtonComponent implements OnInit, AfterViewInit, OnDestroy
 
   private _setPosition(): void {
     const container = this.viewContainer.element.nativeElement;
+
+    container.style.bottom = '';
+    container.style.top = '';
+    container.style.left = '';
+    container.style.right = '';
 
     switch (this.position) {
       case 'br': // bottom right

@@ -1,11 +1,15 @@
 {
   "name": "@corentinmag/ngx-float-button",
-  "version": "0.0.1",
+  "version": "1.5.10",
   "description": "A highly customizable float action button build for Angular2+ with Angular material",
   "author": {
     "email": "corentin.magyar@outlook.fr",
     "name": "Corentin MAGYAR",
     "url": "https://gihub.com/CorentinMAG/packages.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinMAG/packages.git"
   },
   "license": "MIT",
   "bugs": {
@@ -19,11 +23,11 @@
     "ngx-float-button"
   ],
   "peerDependencies": {
-    "@angular/common": "0.0.0-NG",
-    "@angular/core": "0.0.0-NG",
-    "@angular/cdk": "0.0.0-PLACEHOLDER",
-    "@angular/material": "0.0.0-PLACEHOLDER",
-    "@angular/flex-layout": "0.0.0-PLACEHOLDER",
-    "tslib": "0.0.0-TSLIB"
+    "@angular/common": ">=10.0.0",
+    "@angular/core": ">=10.0.0",
+    "@angular/cdk": ">=10.0.0",
+    "@angular/material": ">=10.0.0",
+    "@angular/flex-layout": ">=10.0.0-beta.32",
+    "tslib": ">=2.0.0"
   }
 }

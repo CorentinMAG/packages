@@ -1,5 +1,190 @@
-<ngx-float-button>
-    <ngx-float-item-button></ngx-float-item-button>
-    <ngx-float-item-button></ngx-float-item-button>
-    <ngx-float-item-button></ngx-float-item-button>
-</ngx-float-button>
+<main fxLayout="column" fxLayoutGap="15px">
+    <h1>Customization</h1>
+
+    <mat-card class="main_button">
+        <mat-card-header>
+            <mat-card-title>Main button</mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="row wrap">
+
+            <div fxFlex="50%">
+                <label>Should children buttons appear ? </label>
+                <mat-radio-group [(ngModel)]="isOpen">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <label>Disable tooltip ?</label>
+                <mat-radio-group [(ngModel)]="tooltipDisabled">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <label>Disable button ?</label>
+                <mat-radio-group [(ngModel)]="disabled">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <label>Hoverable button ?</label>
+                <mat-radio-group [(ngModel)]="isHoverable">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>space between children buttons</mat-label>
+                    <input matInput type="number" [(ngModel)]="spaceBetween">
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>space between main and first child button</mat-label>
+                    <input matInput type="number" [(ngModel)]="spaceGap">
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Color</mat-label>
+                    <mat-select [(ngModel)]="mainColor">
+                      <mat-option value="primary">Primary</mat-option>
+                      <mat-option value="accent">Accent</mat-option>
+                      <mat-option value="warn">Warn</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Icon</mat-label>
+                    <mat-select [(ngModel)]="mainIcon">
+                      <mat-option value="home">Home</mat-option>
+                      <mat-option value="search">Search</mat-option>
+                      <mat-option value="settings">Settings</mat-option>
+                      <mat-option value="fingerprint">Fingerprint</mat-option>
+                      <mat-option value="accessible">Accessible</mat-option>
+                      <mat-option value="settings_voice">Setting voice</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Direction</mat-label>
+                    <mat-select [(ngModel)]="direction">
+                      <mat-option value="top">Top</mat-option>
+                      <mat-option value="left">Left</mat-option>
+                      <mat-option value="right">Right</mat-option>
+                      <mat-option value="bottom">Bottom</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Position</mat-label>
+                    <mat-select [(ngModel)]="position">
+                      <mat-option value="br">Bottom right</mat-option>
+                      <mat-option value="bl">Bottom left</mat-option>
+                      <mat-option value="tl">Top left</mat-option>
+                      <mat-option value="tr">Top right</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card class="child1_button">
+        <mat-card-header>
+            <mat-card-title>First child button</mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="row wrap">
+    
+            <div fxFlex="50%">
+                <label>Disable tooltip ?</label>
+                <mat-radio-group [(ngModel)]="child1tooltipDisabled">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <label>Disable button ?</label>
+                <mat-radio-group [(ngModel)]="child1disabled">
+                    <mat-radio-button [value]="true">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Color</mat-label>
+                    <mat-select [(ngModel)]="child1Color">
+                      <mat-option value="primary">Primary</mat-option>
+                      <mat-option value="accent">Accent</mat-option>
+                      <mat-option value="warn">Warn</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="50%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Icon</mat-label>
+                    <mat-select [(ngModel)]="child1Icon">
+                      <mat-option value="home">Home</mat-option>
+                      <mat-option value="search">Search</mat-option>
+                      <mat-option value="settings">Settings</mat-option>
+                      <mat-option value="fingerprint">Fingerprint</mat-option>
+                      <mat-option value="accessible">Accessible</mat-option>
+                      <mat-option value="settings_voice">Setting voice</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50%">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Tooltip text</mat-label>
+                    <input matInput type="text" [(ngModel)]="tooltipText">
+                </mat-form-field>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+
+</main>
+
+
+<div class="float_button_container">
+    <ngx-float-button [isOpen]="isOpen" 
+    [tooltipDisabled]="tooltipDisabled" 
+    [disabled]="disabled"
+    [hoverable]="isHoverable"
+    [spaceBetween]="spaceBetween"
+    [spaceGap]="spaceGap"
+    [color]="mainColor"
+    [icon]="mainIcon"
+    [direction]="direction"
+    [position]="position"
+    >
+        <ngx-float-item-button 
+        [disabled]="child1disabled" 
+        [color]="child1Color" 
+        [icon]="child1Icon" 
+        [tooltipDisabled]="child1tooltipDisabled"
+        [tooltip]="tooltipText"></ngx-float-item-button>
+        <ngx-float-item-button></ngx-float-item-button>
+        <ngx-float-item-button></ngx-float-item-button>
+    </ngx-float-button>
+</div>
