@@ -1,6 +1,6 @@
 {
   "name": "@corentinmag/ngx-float-button",
-  "version": "1.5.10",
+  "version": "1.5.11",
   "description": "A highly customizable float action button build for Angular2+ with Angular material",
   "author": {
     "email": "corentin.magyar@outlook.fr",

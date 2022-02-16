@@ -5,6 +5,8 @@ $ npm install @corentinmag/ngx-float-button
 $ ng add @angular/material
 ```
 
+> check demo [here](https://packages-xi.vercel.app )
+
 ```typescript
 // app.module.ts
 
