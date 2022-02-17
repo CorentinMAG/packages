@@ -13,6 +13,7 @@ export class NgxTooltipDirective implements OnInit {
   @Input('ngxTooltip') text: string = 'tooltip';
 
   private _overlayRef!: OverlayRef;
+  private tooltipRef?: ComponentRef<NgxTooltipComponent>;
 
   constructor(
     private overlayPositionBuilder: OverlayPositionBuilder,
@@ -52,8 +53,8 @@ export class NgxTooltipDirective implements OnInit {
 
   show() {
     const tooltipPortal = new ComponentPortal(NgxTooltipComponent);
-    const tooltipRef: ComponentRef<NgxTooltipComponent> = this._overlayRef.attach(tooltipPortal);
-    tooltipRef.instance.tooltip = this.text;
+    this.tooltipRef = this._overlayRef.attach(tooltipPortal);
+    this.tooltipRef.instance.tooltip = this.text;
   }
 
   hide() {

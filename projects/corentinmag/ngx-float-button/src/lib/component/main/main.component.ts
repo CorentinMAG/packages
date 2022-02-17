@@ -79,7 +79,6 @@ export class NgxFloatButtonComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
 
     if (changes['isOpen'] && changes['isOpen'].previousValue != changes['isOpen'].currentValue) {
       const newState = {...this.stateService.currentState, isOpen: changes['isOpen'].currentValue}

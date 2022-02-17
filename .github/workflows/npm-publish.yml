@@ -1,0 +1,31 @@
+name: Publish package to NPM
+
+on:
+  push:
+    branches:
+      - main
+    path-ignore:
+      - src/**
+  pull_request:
+    branches:
+      - main
+    path_ignore:
+      - src/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-nodes@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npx ng build @corentinmag/ngx-float-button
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
