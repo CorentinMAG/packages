@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: node
-        uses: actions/setup-nodes@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org/'
@@ -27,5 +27,6 @@ jobs:
       - name: Build
         run: npx ng build @corentinmag/ngx-float-button
       - name: Publish
+        run: cd dist && npm publish @corentinmag/ngx-float-button
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
