@@ -1,0 +1,10 @@
+<ngx-splash 
+title="My Awesome App" 
+message="Loading application..."
+[stages]="stages"
+animation="assets/lottie-animation.json"
+icon="assets/logo.jpg"
+loader="assets/loader.svg"
+(finalize)="onFinalize($event)"
+>
+</ngx-splash>

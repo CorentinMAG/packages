@@ -6,6 +6,10 @@
       "@corentinmag/ngx-float-button": [
         "dist/corentinmag/ngx-float-button/corentinmag-ngx-float-button",
         "dist/corentinmag/ngx-float-button"
+      ],
+      "@corentinmag/ngx-splash": [
+        "dist/corentinmag/ngx-splash/corentinmag-ngx-splash",
+        "dist/corentinmag/ngx-splash"
       ]
     },
     "baseUrl": "./",

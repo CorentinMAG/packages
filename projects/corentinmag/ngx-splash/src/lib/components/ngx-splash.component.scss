@@ -1,0 +1,50 @@
+:host {
+    background-color: #6946C6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    .splash_container {
+
+        .app-logo {
+            width: 500px;
+        }
+
+        ng-lottie {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: scale(1.5);
+            z-index: -1;
+        }
+    
+    
+        .app-splash-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+    
+            .app-label {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+    
+            .app-loader {
+                img {
+                    width: 100px;
+                    height: 80px;
+                }
+            }
+        }
+
+    }
+}

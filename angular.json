@@ -136,6 +136,37 @@
           }
         }
       }
+    },
+    "@corentinmag/ngx-splash": {
+      "projectType": "library",
+      "root": "projects/corentinmag/ngx-splash",
+      "sourceRoot": "projects/corentinmag/ngx-splash/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/corentinmag/ngx-splash/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/corentinmag/ngx-splash/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/corentinmag/ngx-splash/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/corentinmag/ngx-splash/src/test.ts",
+            "tsConfig": "projects/corentinmag/ngx-splash/tsconfig.spec.json",
+            "karmaConfig": "projects/corentinmag/ngx-splash/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-libraries"

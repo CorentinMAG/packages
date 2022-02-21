@@ -10,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/floatbutton',
     pathMatch: 'full'
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./demo-splash/demo-splash.module').then(m =>m.DemoSplashModule)
   }
 ];
 

@@ -1,0 +1,12 @@
+<div #splash class="splash_container" @fade *ngIf="show" (@fade.done)="onAnimationEnd($event)">
+    <img class="app-logo" [src]="icon" alt="">
+    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+
+    <div class="app-splash-inner">
+        <div class="app-label">{{ title }}</div>
+        <div class="app-message">{{ message }}</div>
+        <div class="app-loader">
+            <img [src]="loader" alt="">
+        </div>
+    </div>
+</div>
