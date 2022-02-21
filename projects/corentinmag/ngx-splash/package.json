@@ -1,6 +1,26 @@
 {
   "name": "@corentinmag/ngx-splash",
   "version": "1.0.0",
+  "description": "spash screen for angular 12",
+  "author": {
+    "email": "corentin.magyar@outlook.fr",
+    "name": "Corentin MAGYAR",
+    "url": "https://gihub.com/CorentinMAG/packages.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinMAG/packages.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CorentinMAG/packages/issues"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "splash screen",
+    "splash"
+  ],
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
